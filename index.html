@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Invest India | Smart Market Platform</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+
+<!-- ==================================================
+     NAVBAR
+================================================== -->
+
+<header class="header">
+
+    <div class="container nav-container">
+
+        <!-- LOGO -->
+
+        <a href="#" class="logo">
+            Invest<span>India</span>
+        </a>
+
+
+        <!-- MAIN NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <a href="#stocks">
+                Stocks
+            </a>
+
+            <a href="#ipos">
+                IPOs
+            </a>
+
+            <a href="#mutual-funds">
+                Mutual Funds
+            </a>
+
+            <a href="#etfs">
+                ETFs
+            </a>
+
+            <a href="#markets">
+                Markets
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="portfolio.html"
+               class="nav-portfolio">
+                Portfolio
+            </a>
+
+            <a href="login.html"
+               class="nav-login"
+               id="loginNav">
+                Login
+            </a>
+
+            <a href="register.html"
+               class="nav-register"
+               id="registerNav">
+                Register
+            </a>
+            
+        </nav>
+
+
+        <!-- ==================================================
+             PROFILE
+        ================================================== -->
+
+        <div class="profile-menu">
+
+            <img
+                src="https://ui-avatars.com/api/?name=User&background=2563eb&color=fff"
+                alt="Profile"
+                class="profile-image"
+            >
+
+
+            <!-- PROFILE DROPDOWN -->
+
+            <div class="profile-dropdown">
+
+                <div class="profile-welcome">
+
+                    <strong id="profileUserName">
+                        User
+                    </strong>
+
+                </div>
+
+
+                <hr>
+
+
+                <!-- MY PROFILE -->
+
+                <a href="./profile.html">
+                    👤 My Profile
+                </a>
+
+
+                <!-- SECURITY -->
+
+                <a href="javascript:void(0);"
+                   id="securityBtn">
+                    🔒 Security & Settings
+                </a>
+
+
+                <!-- THEME -->
+
+                <button
+                    type="button"
+                    id="themeToggle">
+
+                    🌙 Switch Theme
+
+                </button>
+
+
+                <!-- CALL -->
+
+                <a href="tel:+919999999999">
+                    📞 Call Us
+                </a>
+
+
+                <!-- LOGOUT -->
+
+                <button
+                    type="button"
+                    id="logoutBtn">
+
+                    🚪 Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==================================================
+     MARKET TICKER
+================================================== -->
+
+<div class="market-ticker">
+
+    <div class="container ticker-container">
+
+        <div class="ticker-item">
+
+            <span>
+                NIFTY 50
+            </span>
+
+            <strong>
+                24,850.20
+            </strong>
+
+            <small class="positive">
+                +0.82%
+            </small>
+
+        </div>
+
+
+        <div class="ticker-item">
+
+            <span>
+                SENSEX
+            </span>
+
+            <strong>
+                81,250.45
+            </strong>
+
+            <small class="positive">
+                +0.64%
+            </small>
+
+        </div>
+
+
+        <div class="ticker-item">
+
+            <span>
+                BANK NIFTY
+            </span>
+
+            <strong>
+                54,120.30
+            </strong>
+
+            <small class="positive">
+                +1.12%
+            </small>
+
+        </div>
+
+
+        <div class="ticker-item">
+
+            <span>
+                USD / INR
+            </span>
+
+            <strong>
+                88.42
+            </strong>
+
+            <small class="negative">
+                -0.18%
+            </small>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
+<section class="hero">
+
+    <div class="container hero-grid">
+
+        <!-- HERO CONTENT -->
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+
+                <span class="live-dot"></span>
+
+                MARKET INTELLIGENCE PLATFORM
+
+            </div>
+
+
+            <h1>
+
+                Make Smarter
+
+                <span>
+                    Market Decisions.
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Explore stocks, IPOs, mutual funds and ETFs
+                with powerful yet simple market analysis tools.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a href="#stocks"
+                   class="primary-btn">
+
+                    Explore Markets
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a href="#about"
+                   class="secondary-btn">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+
+            <div class="hero-trust">
+
+                <div>
+
+                    <strong>
+                        500+
+                    </strong>
+
+                    <span>
+                        Stocks
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        100+
+                    </strong>
+
+                    <span>
+                        IPOs
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        50+
+                    </strong>
+
+                    <span>
+                        Funds
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HERO MARKET CARD -->
+
+        <div class="hero-dashboard">
+
+            <div class="dashboard-glow"></div>
+
+
+            <div class="portfolio-card">
+
+                <div class="portfolio-header">
+
+                    <div>
+
+                        <span>
+                            Portfolio Value
+                        </span>
+
+                        <h2>
+                            ₹2,48,650
+                        </h2>
+
+                    </div>
+
+
+                    <div class="profit-badge">
+                        +12.84%
+                    </div>
+
+                </div>
+
+
+
+                <div class="chart-area">
+
+                    <div class="chart-labels">
+
+                        <span>
+                            ₹2.5L
+                        </span>
+
+                        <span>
+                            ₹2.0L
+                        </span>
+
+                        <span>
+                            ₹1.5L
+                        </span>
+
+                    </div>
+
+
+                    <div class="chart-grid-lines"></div>
+
+
+                    <svg
+                        class="market-chart"
+                        viewBox="0 0 500 180"
+                        preserveAspectRatio="none">
+
+                        <defs>
+
+                            <linearGradient
+                                id="chartFill"
+                                x1="0"
+                                x2="0"
+                                y1="0"
+                                y2="1">
+
+                                <stop
+                                    offset="0%"
+                                    stop-opacity="0.25"/>
+
+                                <stop
+                                    offset="100%"
+                                    stop-opacity="0"/>
+
+                            </linearGradient>
+
+                        </defs>
+
+
+                        <path
+                            class="chart-fill"
+                            d="M0 145
+                               C45 135 65 150 95 120
+                               C125 92 150 112 175 95
+                               C205 75 225 100 255 72
+                               C285 45 310 65 340 52
+                               C375 38 390 55 420 28
+                               C450 10 475 22 500 5
+                               L500 180
+                               L0 180 Z"/>
+
+
+                        <path
+                            class="chart-path"
+                            d="M0 145
+                               C45 135 65 150 95 120
+                               C125 92 150 112 175 95
+                               C205 75 225 100 255 72
+                               C285 45 310 65 340 52
+                               C375 38 390 55 420 28
+                               C450 10 475 22 500 5"/>
+
+                    </svg>
+
+                </div>
+
+
+
+                <div class="chart-periods">
+
+                    <span>
+                        1D
+                    </span>
+
+                    <span>
+                        1W
+                    </span>
+
+                    <span class="active">
+                        1M
+                    </span>
+
+                    <span>
+                        1Y
+                    </span>
+
+                    <span>
+                        5Y
+                    </span>
+
+                </div>
+
+
+
+                <div class="portfolio-stats">
+
+                    <div>
+
+                        <span>
+                            Invested
+                        </span>
+
+                        <strong>
+                            ₹2,20,400
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Returns
+                        </span>
+
+                        <strong class="positive">
+                            +₹28,250
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FLOATING STOCK CARD -->
+
+            <div class="floating-stock-card">
+
+                <div class="stock-mini-icon">
+                    ITC
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Top Stock
+                    </span>
+
+                    <strong>
+                        ITC Ltd.
+                    </strong>
+
+                </div>
+
+
+                <b class="positive">
+                    +4.82%
+                </b>
+
+            </div>
+
+
+
+            <!-- FLOATING MINI CARD -->
+
+            <div class="floating-mini-card">
+
+                <span>
+                    Today's Market
+                </span>
+
+                <strong>
+                    Bullish
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     QUICK MARKET OVERVIEW
+================================================== -->
+
+<section class="market-overview">
+
+    <div class="container">
+
+        <div class="section-top">
+
+            <div>
+
+                <span class="section-label">
+                    MARKET OVERVIEW
+                </span>
+
+                <h2>
+                    Today's Market
+                </h2>
+
+            </div>
+
+
+            <span class="market-status">
+                ● Market Data
+            </span>
+
+        </div>
+
+
+
+        <div class="market-cards">
+
+            <div class="market-overview-card">
+
+                <div class="market-card-top">
+
+                    <span>
+                        NIFTY 50
+                    </span>
+
+                    <span class="market-icon">
+                        N
+                    </span>
+
+                </div>
+
+                <strong>
+                    24,850.20
+                </strong>
+
+                <small class="positive">
+                    ▲ +0.82% Today
+                </small>
+
+            </div>
+
+
+            <div class="market-overview-card">
+
+                <div class="market-card-top">
+
+                    <span>
+                        SENSEX
+                    </span>
+
+                    <span class="market-icon">
+                        S
+                    </span>
+
+                </div>
+
+                <strong>
+                    81,250.45
+                </strong>
+
+                <small class="positive">
+                    ▲ +0.64% Today
+                </small>
+
+            </div>
+
+
+            <div class="market-overview-card">
+
+                <div class="market-card-top">
+
+                    <span>
+                        BANK NIFTY
+                    </span>
+
+                    <span class="market-icon">
+                        B
+                    </span>
+
+                </div>
+
+                <strong>
+                    54,120.30
+                </strong>
+
+                <small class="positive">
+                    ▲ +1.12% Today
+                </small>
+
+            </div>
+
+
+            <div class="market-overview-card">
+
+                <div class="market-card-top">
+
+                    <span>
+                        USD / INR
+                    </span>
+
+                    <span class="market-icon">
+                        ₹
+                    </span>
+
+                </div>
+
+                <strong>
+                    88.42
+                </strong>
+
+                <small class="negative">
+                    ▼ -0.18% Today
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     QUICK TOOLS
+================================================== -->
+
+<section class="quick-tools">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                EXPLORE
+            </span>
+
+            <h2>
+                Everything You Need
+            </h2>
+
+            <p>
+                Research and understand different investment markets.
+            </p>
+
+        </div>
+
+
+
+        <div class="tool-grid">
+
+            <a href="#stocks"
+               class="tool-card">
+
+                <div class="tool-icon blue">
+                    📈
+                </div>
+
+                <div>
+
+                    <h3>
+                        Stocks
+                    </h3>
+
+                    <p>
+                        Search and analyse stocks.
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <a href="#ipos"
+               class="tool-card">
+
+                <div class="tool-icon purple">
+                    🚀
+                </div>
+
+                <div>
+
+                    <h3>
+                        IPOs
+                    </h3>
+
+                    <p>
+                        Track current and upcoming IPOs.
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <a href="#mutual-funds"
+               class="tool-card">
+
+                <div class="tool-icon green">
+                    💰
+                </div>
+
+                <div>
+
+                    <h3>
+                        Mutual Funds
+                    </h3>
+
+                    <p>
+                        Explore mutual fund information.
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <a href="#etfs"
+               class="tool-card">
+
+                <div class="tool-icon orange">
+                    📊
+                </div>
+
+                <div>
+
+                    <h3>
+                        ETFs
+                    </h3>
+
+                    <p>
+                        Discover exchange traded funds.
+                    </p>
+
+                </div>
+
+                <span class="tool-arrow">
+                    →
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     STOCK ANALYSIS
+================================================== -->
+
+<section id="stocks"
+         class="market-section">
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <span class="section-label">
+                STOCK MARKET
+            </span>
+
+            <h2>
+                Analyse Any Stock
+            </h2>
+
+            <p>
+                Search for a company and explore its market details.
+            </p>
+
+        </div>
+
+
+
+        <!-- STOCK SEARCH -->
+
+        <div class="stock-search">
+
+            <input
+                type="text"
+                id="stockSymbol"
+                list="stockSuggestions"
+                autocomplete="off"
+                placeholder="Search stock symbol e.g. ITC"
+            >
+
+
+            <datalist id="stockSuggestions">
+
+                <option value="ITC">
+                    ITC Limited
+                </option>
+
+                <option value="TCS">
+                    Tata Consultancy Services
+                </option>
+
+                <option value="INFY">
+                    Infosys Limited
+                </option>
+
+                <option value="RELIANCE">
+                    Reliance Industries
+                </option>
+
+                <option value="HDFCBANK">
+                    HDFC Bank
+                </option>
+
+                <option value="SBIN">
+                    State Bank of India
+                </option>
+
+                <option value="ICICIBANK">
+                    ICICI Bank
+                </option>
+
+                <option value="WIPRO">
+                    Wipro Limited
+                </option>
+
+                <option value="HCLTECH">
+                    HCL Technologies
+                </option>
+
+                <option value="MARUTI">
+                    Maruti Suzuki India
+                </option>
+
+            </datalist>
+
+
+            <button id="searchStock">
+                🔍 Search Stock
+            </button>
+
+        </div>
+
+
+
+        <!-- STOCK RESULT -->
+
+        <div class="stock-result">
+
+            <div class="stock-main-card">
+
+
+                <!-- STOCK TITLE -->
+
+                <div class="stock-title">
+
+                    <div>
+
+                        <span>
+                            COMPANY
+                        </span>
+
+                        <h2 id="stockName">
+                            Search a stock
+                        </h2>
+
+                        <p id="stockCode">
+                            —
+                        </p>
+
+                    </div>
+
+
+                    <div class="stock-price">
+
+                        <span>
+                            Current Price
+                        </span>
+
+                        <strong id="currentPrice">
+                            —
+                        </strong>
+
+
+                        <!-- WATCHLIST BUTTON -->
+
+                        <button
+                            type="button"
+                            id="watchlistBtn"
+                            class="watchlist-btn">
+
+                            ⭐ Add to Watchlist
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STOCK DETAILS -->
+
+                <div class="stock-details">
+
+
+                    <!-- OPEN -->
+
+                    <div>
+
+                        <span>
+                            Open
+                        </span>
+
+                        <strong id="openPrice">
+                            —
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- HIGH -->
+
+                    <div>
+
+                        <span>
+                            High
+                        </span>
+
+                        <strong id="highPrice">
+                            —
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- LOW -->
+
+                    <div>
+
+                        <span>
+                            Low
+                        </span>
+
+                        <strong id="lowPrice">
+                            —
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- PREVIOUS CLOSE -->
+
+                    <div>
+
+                        <span>
+                            Previous Close
+                        </span>
+
+                        <strong id="previousClose">
+                            —
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- VOLUME -->
+
+                    <div>
+
+                        <span>
+                            Volume
+                        </span>
+
+                        <strong id="volume">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     IPO SECTION
+================================================== -->
+
+<section id="ipos"
+         class="market-section light-section">
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <span class="section-label">
+                IPO MARKET
+            </span>
+
+            <h2>
+                Initial Public Offerings
+            </h2>
+
+            <p>
+                Explore IPO information and market status.
+            </p>
+
+        </div>
+
+
+
+        <div class="ipo-filters">
+
+            <button
+                id="openIPOS"
+                class="active">
+
+                Open IPOs
+
+            </button>
+
+
+            <button id="closedIPOS">
+
+                Closed IPOs
+
+            </button>
+
+
+            <button id="upcomingIPOS">
+
+                Upcoming IPOs
+
+            </button>
+
+        </div>
+
+
+
+        <div id="ipoContainer"
+             class="ipo-grid">
+
+            <div class="loading-card">
+
+                Loading IPO data...
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     MUTUAL FUNDS
+================================================== -->
+
+<section id="mutual-funds"
+         class="market-section">
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <span class="section-label">
+                MUTUAL FUNDS
+            </span>
+
+            <h2>
+                Mutual Fund Explorer
+            </h2>
+
+            <p>
+                Search and explore mutual fund information.
+            </p>
+
+        </div>
+
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="mutualFundSearch"
+                placeholder="Search mutual fund"
+            >
+
+
+            <button id="searchMutualFund">
+
+                🔍 Search
+
+            </button>
+
+        </div>
+
+
+
+        <div id="fundContainer"
+             class="fund-grid">
+
+            <div class="loading-card">
+
+                Search for a mutual fund.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     ETF
+================================================== -->
+
+<section id="etfs"
+         class="market-section light-section">
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <span class="section-label">
+                ETFs
+            </span>
+
+            <h2>
+                ETF Explorer
+            </h2>
+
+            <p>
+                Explore exchange traded funds.
+            </p>
+
+        </div>
+
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="etfSearch"
+                placeholder="Search ETF"
+            >
+
+
+            <button id="searchETF">
+
+                🔍 Search
+
+            </button>
+
+        </div>
+
+
+
+        <div id="etfContainer"
+             class="fund-grid">
+
+            <div class="loading-card">
+
+                Search for an ETF.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     MORE MARKETS
+================================================== -->
+
+<section id="markets"
+         class="other-markets">
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <span class="section-label">
+                MORE MARKETS
+            </span>
+
+            <h2>
+                Explore Financial Markets
+            </h2>
+
+        </div>
+
+
+
+        <div class="other-grid">
+
+
+            <!-- GLOBAL MARKETS -->
+
+            <div class="other-card">
+
+                <div class="other-icon">
+                    🌍
+                </div>
+
+                <h3>
+                    Global Markets
+                </h3>
+
+                <p>
+                    Explore major global market concepts.
+                </p>
+
+            </div>
+
+
+
+            <!-- CURRENCY -->
+
+            <div class="other-card">
+
+                <div class="other-icon">
+                    💱
+                </div>
+
+                <h3>
+                    Currency
+                </h3>
+
+                <p>
+                    Understand currency market information.
+                </p>
+
+            </div>
+
+
+
+            <!-- BANKING -->
+
+            <div class="other-card">
+
+                <div class="other-icon">
+                    🏦
+                </div>
+
+                <h3>
+                    Banking
+                </h3>
+
+                <p>
+                    Explore financial sector information.
+                </p>
+
+            </div>
+
+
+
+            <!-- LEARN -->
+
+            <div class="other-card">
+
+                <div class="other-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Learn
+                </h3>
+
+                <p>
+                    Build your financial knowledge.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     ABOUT
+================================================== -->
+
+<section id="about"
+         class="about-section">
+
+    <div class="container about-grid">
+
+
+        <!-- ABOUT CONTENT -->
+
+        <div class="about-content">
+
+            <span class="section-label">
+                ABOUT INVEST INDIA
+            </span>
+
+
+            <h2>
+
+                Understand Markets.
+
+                Invest With Knowledge.
+
+            </h2>
+
+
+            <p>
+
+                Invest India is an educational market-analysis
+                platform designed to bring stocks, IPOs,
+                mutual funds and ETFs together in one place.
+
+            </p>
+
+
+            <p>
+
+                Explore market information, analyse companies,
+                learn investment concepts and understand
+                financial markets.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- ABOUT HIGHLIGHTS -->
+
+        <div class="about-highlight">
+
+
+            <div>
+
+                <strong>
+                    📊
+                </strong>
+
+                <span>
+                    Market Data
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    🔎
+                </strong>
+
+                <span>
+                    Easy Search
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    📈
+                </strong>
+
+                <span>
+                    Analysis
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    🎓
+                </strong>
+
+                <span>
+                    Learning
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div>
+
+            <a href="#"
+               class="footer-logo">
+
+                Invest<span>India</span>
+
+            </a>
+
+
+            <p>
+
+                A simple platform to understand
+                financial markets.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Invest India. All rights reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script src="js/stock-api.js"></script>
+
+<script src="js/ipo-api.js"></script>
+
+<script src="js/mutualfund-api.js"></script>
+
+<script src="js/etf-api.js"></script>
+
+<script src="js/app.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile - Invest India</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+        Invest<span>India</span>
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+
+        <a href="portfolio.html">
+            Portfolio
+        </a>
+
+
+        <a href="index.html"
+           onclick="logoutUser(event)">
+            Logout
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= PROFILE PAGE ================= -->
+
+<main class="profile-page">
+
+    <div class="profile-container">
+
+
+        <!-- ================= PROFILE HEADER ================= -->
+
+        <section class="profile-header">
+
+
+            <div class="profile-avatar"
+                 id="profileAvatar">
+
+                U
+
+            </div>
+
+
+            <div class="profile-heading">
+
+                <h1 id="profileName">
+                    User
+                </h1>
+
+
+                <p id="profileEmail">
+                    user@example.com
+                </p>
+
+
+                <span class="account-badge">
+                    Investor Account
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= PROFILE CONTENT ================= -->
+
+        <div class="profile-content">
+
+
+            <!-- ================= PERSONAL INFORMATION ================= -->
+
+            <section class="profile-card">
+
+
+                <div class="card-title">
+
+
+                    <div>
+
+                        <h2>
+                            Personal Information
+                        </h2>
+
+
+                        <p>
+                            Manage your personal account information
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="edit-btn"
+                        id="editBtn"
+                        onclick="enableEdit()">
+
+                        ✏️ Edit Profile
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- ================= VIEW MODE ================= -->
+
+                <div
+                    class="profile-details"
+                    id="profileView">
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Full Name
+                        </span>
+
+
+                        <strong id="viewName">
+                            User
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Email Address
+                        </span>
+
+
+                        <strong id="viewEmail">
+                            user@example.com
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Account Status
+                        </span>
+
+
+                        <strong class="status-active">
+                            Active
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= EDIT MODE ================= -->
+
+                <div
+                    class="profile-edit"
+                    id="profileEdit"
+                    style="display:none;">
+
+
+                    <div class="input-group">
+
+                        <label for="editName">
+                            Full Name
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="editName"
+                            placeholder="Enter your name">
+
+                    </div>
+
+
+
+                    <div class="input-group">
+
+                        <label for="editEmail">
+                            Email Address
+                        </label>
+
+
+                        <input
+                            type="email"
+                            id="editEmail"
+                            placeholder="Enter your email">
+
+                    </div>
+
+
+
+                    <div class="edit-actions">
+
+
+                        <button
+                            type="button"
+                            class="cancel-btn"
+                            onclick="cancelEdit()">
+
+                            Cancel
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="save-btn"
+                            onclick="saveProfile()">
+
+                            Save Changes
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= ACCOUNT INFORMATION ================= -->
+
+            <section class="profile-card">
+
+
+                <div class="card-title">
+
+
+                    <div>
+
+                        <h2>
+                            Account Information
+                        </h2>
+
+
+                        <p>
+                            Information about your Invest India account
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="account-grid">
+
+
+                    <div class="account-box">
+
+                        <div class="account-icon">
+                            👤
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Account Type
+                            </span>
+
+
+                            <strong>
+                                Investor
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="account-box">
+
+                        <div class="account-icon">
+                            📊
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Platform
+                            </span>
+
+
+                            <strong>
+                                Invest India
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="account-box">
+
+                        <div class="account-icon">
+                            🔒
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Security
+                            </span>
+
+
+                            <strong>
+                                Protected
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="account-box">
+
+                        <div class="account-icon">
+                            ✅
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Account Status
+                            </span>
+
+
+                            <strong class="text-green">
+                                Active
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= QUICK ACTIONS ================= -->
+
+            <section class="profile-card">
+
+
+                <div class="card-title">
+
+
+                    <div>
+
+                        <h2>
+                            Quick Actions
+                        </h2>
+
+
+                        <p>
+                            Quickly access your investment tools
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="quick-actions">
+
+
+                    <a
+                        href="portfolio.html"
+                        class="quick-action">
+
+                        <span>
+                            💼
+                        </span>
+
+
+                        <div>
+
+                            <strong>
+                                My Portfolio
+                            </strong>
+
+
+                            <small>
+                                View your investments
+                            </small>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <a
+                        href="index.html#stocks"
+                        class="quick-action">
+
+                        <span>
+                            📈
+                        </span>
+
+
+                        <div>
+
+                            <strong>
+                                Market Analysis
+                            </strong>
+
+
+                            <small>
+                                Explore stocks and markets
+                            </small>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+// =========================================================
+// LOGIN CHECK
+// =========================================================
+
+const isLoggedIn =
+    localStorage.getItem(
+        "isLoggedIn"
+    );
+
+
+if (
+    isLoggedIn !== "true"
+) {
+
+    localStorage.setItem(
+        "returnPage",
+        "profile.html"
+    );
+
+
+    window.location.href =
+        "login.html";
+
+}
+
+
+
+// =========================================================
+// LOAD USER PROFILE
+// =========================================================
+
+function loadProfile() {
+
+    const userName =
+        localStorage.getItem(
+            "userName"
+        );
+
+
+    const userEmail =
+        localStorage.getItem(
+            "userEmail"
+        );
+
+
+    const displayName =
+        userName ||
+        "User";
+
+
+    const displayEmail =
+        userEmail ||
+        "No email available";
+
+
+    // ========================================
+    // PROFILE HEADER
+    // ========================================
+
+    document.getElementById(
+        "profileName"
+    ).textContent =
+        displayName;
+
+
+    document.getElementById(
+        "profileEmail"
+    ).textContent =
+        displayEmail;
+
+
+    // ========================================
+    // PERSONAL INFORMATION
+    // ========================================
+
+    document.getElementById(
+        "viewName"
+    ).textContent =
+        displayName;
+
+
+    document.getElementById(
+        "viewEmail"
+    ).textContent =
+        displayEmail;
+
+
+    // ========================================
+    // PROFILE AVATAR
+    // ========================================
+
+    const firstLetter =
+        displayName
+            .trim()
+            .charAt(0)
+            .toUpperCase();
+
+
+    document.getElementById(
+        "profileAvatar"
+    ).textContent =
+        firstLetter || "U";
+
+}
+
+
+
+// =========================================================
+// ENABLE EDIT
+// =========================================================
+
+function enableEdit() {
+
+    const name =
+        document.getElementById(
+            "viewName"
+        ).textContent;
+
+
+    const email =
+        document.getElementById(
+            "viewEmail"
+        ).textContent;
+
+
+    document.getElementById(
+        "editName"
+    ).value =
+        name;
+
+
+    document.getElementById(
+        "editEmail"
+    ).value =
+        email;
+
+
+    document.getElementById(
+        "profileView"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "profileEdit"
+    ).style.display =
+        "grid";
+
+
+    document.getElementById(
+        "editBtn"
+    ).style.display =
+        "none";
+
+}
+
+
+
+// =========================================================
+// CANCEL EDIT
+// =========================================================
+
+function cancelEdit() {
+
+    document.getElementById(
+        "profileView"
+    ).style.display =
+        "grid";
+
+
+    document.getElementById(
+        "profileEdit"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "editBtn"
+    ).style.display =
+        "block";
+
+}
+
+
+
+// =========================================================
+// SAVE PROFILE
+// =========================================================
+
+function saveProfile() {
+
+    const name =
+        document.getElementById(
+            "editName"
+        )
+        .value
+        .trim();
+
+
+    const email =
+        document.getElementById(
+            "editEmail"
+        )
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    // ========================================
+    // VALIDATION
+    // ========================================
+
+    if (
+        !name ||
+        !email
+    ) {
+
+        alert(
+            "Please enter name and email."
+        );
+
+        return;
+
+    }
+
+
+    if (
+        name.length < 2
+    ) {
+
+        alert(
+            "Please enter a valid name."
+        );
+
+        return;
+
+    }
+
+
+    // ========================================
+    // GET OLD EMAIL
+    // ========================================
+
+    const oldEmail =
+        localStorage.getItem(
+            "userEmail"
+        );
+
+
+    // ========================================
+    // UPDATE USER INFORMATION
+    // ========================================
+
+    localStorage.setItem(
+        "userName",
+        name
+    );
+
+
+    localStorage.setItem(
+        "userEmail",
+        email
+    );
+
+
+    // ========================================
+    // UPDATE LOGIN EMAIL
+    // ========================================
+
+    localStorage.setItem(
+        "loggedInEmail",
+        email
+    );
+
+
+    // ========================================
+    // UPDATE PROFILE PAGE
+    // ========================================
+
+    document.getElementById(
+        "profileName"
+    ).textContent =
+        name;
+
+
+    document.getElementById(
+        "profileEmail"
+    ).textContent =
+        email;
+
+
+    document.getElementById(
+        "viewName"
+    ).textContent =
+        name;
+
+
+    document.getElementById(
+        "viewEmail"
+    ).textContent =
+        email;
+
+
+    // ========================================
+    // UPDATE AVATAR
+    // ========================================
+
+    document.getElementById(
+        "profileAvatar"
+    ).textContent =
+        name
+            .trim()
+            .charAt(0)
+            .toUpperCase();
+
+
+    // ========================================
+    // PROFILE STORAGE MIGRATION
+    // ========================================
+
+    if (
+        oldEmail &&
+        oldEmail !== email
+    ) {
+
+        const oldPortfolioKey =
+            "portfolio_" +
+            oldEmail;
+
+
+        const newPortfolioKey =
+            "portfolio_" +
+            email;
+
+
+        const oldPortfolio =
+            localStorage.getItem(
+                oldPortfolioKey
+            );
+
+
+        if (
+            oldPortfolio
+        ) {
+
+            localStorage.setItem(
+                newPortfolioKey,
+                oldPortfolio
+            );
+
+
+            localStorage.removeItem(
+                oldPortfolioKey
+            );
+
+        }
+
+    }
+
+
+    // ========================================
+    // CLOSE EDIT MODE
+    // ========================================
+
+    cancelEdit();
+
+
+    alert(
+        "Profile updated successfully."
+    );
+
+}
+
+
+
+// =========================================================
+// LOGOUT
+// =========================================================
+
+function logoutUser(event) {
+
+    if (event) {
+
+        event.preventDefault();
+
+    }
+
+
+    // ========================================
+    // REMOVE LOGIN SESSION
+    // ========================================
+
+    localStorage.removeItem(
+        "isLoggedIn"
+    );
+
+
+    localStorage.removeItem(
+        "loggedInEmail"
+    );
+
+
+    localStorage.removeItem(
+        "returnPage"
+    );
+
+
+    // ========================================
+    // REDIRECT
+    // ========================================
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+
+// =========================================================
+// START
+// =========================================================
+
+loadProfile();
+
+
+</script>
+
+
+</body>
+
+</html>
