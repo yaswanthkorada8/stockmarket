@@ -1,48 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Invest India</title>
-
-    <link rel="stylesheet"
-          href="css/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 
 <body class="auth-page">
 
-
-<!-- ==================================================
-     LOGIN PAGE
-================================================== -->
-
 <div class="auth-container">
 
-
-    <!-- LEFT SIDE -->
-
     <div class="auth-info">
-
-        <a href="index.html"
-           class="auth-logo">
-
+        <a href="index.html" class="auth-logo">
             Invest<span>India</span>
-
         </a>
 
-
         <div class="auth-info-content">
-
-            <span class="auth-label">
-                INVEST INDIA
-            </span>
+            <span class="auth-label">INVEST INDIA</span>
 
             <h1>
                 Welcome Back.
@@ -55,503 +31,209 @@
                 from one simple platform.
             </p>
 
-
             <div class="auth-features">
-
                 <div>
                     <span>📈</span>
-                    <p>
-                        Stock Analysis
-                    </p>
+                    <p>Stock Analysis</p>
                 </div>
 
                 <div>
                     <span>💼</span>
-                    <p>
-                        Portfolio Tracking
-                    </p>
+                    <p>Portfolio Tracking</p>
                 </div>
 
                 <div>
                     <span>📊</span>
-                    <p>
-                        Market Insights
-                    </p>
+                    <p>Market Insights</p>
                 </div>
-
             </div>
-
         </div>
-
 
         <div class="auth-footer-text">
             © 2026 Invest India
         </div>
-
     </div>
 
-
-
-    <!-- RIGHT SIDE -->
-
     <div class="auth-form-section">
-
-
         <div class="auth-form-card">
 
-
             <div class="auth-form-header">
-
                 <span class="auth-mobile-logo">
                     Invest<span>India</span>
                 </span>
 
-                <h2>
-                    Login
-                </h2>
+                <h2>Login</h2>
 
-                <p>
-                    Login to continue to your account.
-                </p>
-
+                <p>Login to continue to your account.</p>
             </div>
-
-
-            <!-- ==================================================
-                 LOGIN FORM
-            ================================================== -->
 
             <form id="loginForm">
 
-
-                <!-- EMAIL -->
-
                 <div class="form-group">
-
-                    <label for="loginEmail">
-                        Email Address
-                    </label>
-
+                    <label for="loginEmail">Email Address</label>
                     <input
                         type="email"
                         id="loginEmail"
                         placeholder="Enter your email"
                         required
+                        autocomplete="email"
                     >
-
                 </div>
 
-
-                <!-- PASSWORD -->
-
                 <div class="form-group">
-
-                    <label for="loginPassword">
-                        Password
-                    </label>
-
+                    <label for="loginPassword">Password</label>
                     <input
                         type="password"
                         id="loginPassword"
                         placeholder="Enter your password"
                         required
+                        autocomplete="current-password"
                     >
-
                 </div>
-
-
-                <!-- OPTIONS -->
 
                 <div class="form-options">
-
                     <label class="remember-me">
-
-                        <input
-                            type="checkbox"
-                            id="rememberMe"
-                        >
-
-                        <span>
-                            Remember me
-                        </span>
-
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
                     </label>
 
-
-                    <a href="#">
-                        Forgot Password?
-                    </a>
-
+                    <a href="#">Forgot Password?</a>
                 </div>
 
-
-                <!-- LOGIN BUTTON -->
-
-                <button
-                    type="submit"
-                    class="auth-submit-btn">
-
+                <button type="submit" class="auth-submit-btn">
                     Login
                     <span>→</span>
-
                 </button>
 
-
-                <!-- MESSAGE -->
-
-                <p id="loginMessage"
-                   class="auth-message">
-                </p>
-
+                <p id="loginMessage" class="auth-message" role="status"></p>
 
             </form>
 
-
-            <!-- ==================================================
-                 REGISTER
-            ================================================== -->
-
             <div class="auth-switch">
-
-                <span>
-                    Don't have an account?
-                </span>
-
-                <a href="register.html">
-                    Create Account
-                </a>
-
+                <span>Don't have an account?</span>
+                <a href="register.html">Create Account</a>
             </div>
 
-
-            <!-- ==================================================
-                 HOME
-            ================================================== -->
-
-            <a href="index.html"
-               class="back-home">
-
+            <a href="index.html" class="back-home">
                 ← Back to Home
-
             </a>
 
         </div>
-
     </div>
 
 </div>
 
-
-
-<!-- ==================================================
-     LOGIN JAVASCRIPT
-     FRONTEND ONLY
-     LOCAL STORAGE
-================================================== -->
-
 <script>
+"use strict";
 
+const loginForm = document.getElementById("loginForm");
+const loginMessage = document.getElementById("loginMessage");
 
-// ========================================
-// GET ELEMENTS
-// ========================================
+function showLoginMessage(message, type) {
+    loginMessage.textContent = message;
+    loginMessage.className = "auth-message " + type;
+}
 
-const loginForm =
-    document.getElementById(
-        "loginForm"
-    );
+function getRegisteredAccounts() {
+    try {
+        const storedAccounts = localStorage.getItem("investmentAccounts");
 
+        if (storedAccounts) {
+            const accounts = JSON.parse(storedAccounts);
 
-const loginMessage =
-    document.getElementById(
-        "loginMessage"
-    );
-
-
-// ========================================
-// LOGIN FORM SUBMIT
-// ========================================
-
-loginForm.addEventListener(
-    "submit",
-    function(event) {
-
-        event.preventDefault();
-
-
-        // ========================================
-        // GET EMAIL
-        // ========================================
-
-        const email =
-            document.getElementById(
-                "loginEmail"
-            )
-            .value
-            .trim()
-            .toLowerCase();
-
-
-        // ========================================
-        // GET PASSWORD
-        // ========================================
-
-        const password =
-            document.getElementById(
-                "loginPassword"
-            )
-            .value
-            .trim();
-
-
-        // ========================================
-        // VALIDATION
-        // ========================================
-
-        if (
-            !email ||
-            !password
-        ) {
-
-            loginMessage.textContent =
-                "Please enter email and password.";
-
-            loginMessage.className =
-                "auth-message error";
-
-            return;
-
+            if (Array.isArray(accounts)) {
+                return accounts;
+            }
         }
 
-
-        // ========================================
-        // GET REGISTERED USER
-        // ========================================
-
-        const registeredEmail =
-            localStorage.getItem(
-                "userEmail"
-            );
-
-
-        const registeredPassword =
-            localStorage.getItem(
-                "userPassword"
-            );
-
-
-        const registeredName =
-            localStorage.getItem(
-                "userName"
-            );
-
-
-        // ========================================
-        // CHECK ACCOUNT
-        // ========================================
-
-        if (
-            !registeredEmail ||
-            !registeredPassword
-        ) {
-
-            loginMessage.textContent =
-                "Account not found. Please create an account first.";
-
-            loginMessage.className =
-                "auth-message error";
-
-            return;
-
-        }
-
-
-        // ========================================
-        // CHECK EMAIL
-        // ========================================
-
-        if (
-            email !==
-            registeredEmail
-        ) {
-
-            loginMessage.textContent =
-                "Incorrect email address.";
-
-            loginMessage.className =
-                "auth-message error";
-
-            return;
-
-        }
-
-
-        // ========================================
-        // CHECK PASSWORD
-        // ========================================
-
-        if (
-            password !==
-            registeredPassword
-        ) {
-
-            loginMessage.textContent =
-                "Incorrect password.";
-
-            loginMessage.className =
-                "auth-message error";
-
-            return;
-
-        }
-
-
-        // ========================================
-        // LOGIN SUCCESS
-        // ========================================
-
-        localStorage.setItem(
-            "isLoggedIn",
-            "true"
-        );
-
-
-        localStorage.setItem(
-            "loggedInEmail",
-            email
-        );
-
-
-        localStorage.setItem(
-            "userEmail",
-            email
-        );
-
-
-        // ========================================
-        // SAVE USER NAME
-        // ========================================
-
-        if (
-            registeredName
-        ) {
-
-            localStorage.setItem(
-                "userName",
-                registeredName
-            );
-
-        }
-        else {
-
-            const emailName =
-                email
-                    .split("@")[0]
-                    .trim();
-
-
-            localStorage.setItem(
-                "userName",
-                emailName
-            );
-
-        }
-
-
-        // ========================================
-        // REMEMBER ME
-        // ========================================
-
-        const rememberMe =
-            document.getElementById(
-                "rememberMe"
-            );
-
-
-        if (
-            rememberMe &&
-            rememberMe.checked
-        ) {
-
-            localStorage.setItem(
-                "rememberMe",
-                "true"
-            );
-
-        }
-        else {
-
-            localStorage.removeItem(
-                "rememberMe"
-            );
-
-        }
-
-
-        // ========================================
-        // SUCCESS MESSAGE
-        // ========================================
-
-        loginMessage.textContent =
-            "Login successful!";
-
-        loginMessage.className =
-            "auth-message success";
-
-
-        // ========================================
-        // REDIRECT
-        // ========================================
-
-        setTimeout(
-            function() {
-
-                const returnPage =
-                    localStorage.getItem(
-                        "returnPage"
-                    );
-
-
-                // ========================================
-                // RETURN TO PREVIOUS PAGE
-                // ========================================
-
-                if (
-                    returnPage
-                ) {
-
-                    localStorage.removeItem(
-                        "returnPage"
-                    );
-
-
-                    window.location.href =
-                        returnPage;
-
-                }
-
-                // ========================================
-                // DEFAULT HOME PAGE
-                // ========================================
-
-                else {
-
-                    window.location.href =
-                        "index.html";
-
-                }
-
-            },
-            700
-        );
-
+        return [];
+    } catch (error) {
+        return null;
     }
-);
+}
 
+loginForm.addEventListener("submit", function (event) {
+    event.preventDefault();
 
+    const email = document.getElementById("loginEmail").value.trim().toLowerCase();
+    const password = document.getElementById("loginPassword").value;
+    const rememberMe = document.getElementById("rememberMe").checked;
+
+    if (!email || !password) {
+        showLoginMessage("Please enter email and password.", "error");
+        return;
+    }
+
+    const accounts = getRegisteredAccounts();
+
+    if (accounts === null) {
+        showLoginMessage("Unable to read saved accounts. Check browser storage.", "error");
+        return;
+    }
+
+    // Support accounts created with the previous version.
+    const oldEmail = localStorage.getItem("userEmail");
+    const oldPassword = localStorage.getItem("userPassword");
+    const oldName = localStorage.getItem("userName");
+
+    if (oldEmail && oldPassword &&
+        !accounts.some(account => account.email === oldEmail.trim().toLowerCase())) {
+        accounts.push({
+            name: oldName || oldEmail.split("@")[0],
+            email: oldEmail.trim().toLowerCase(),
+            password: oldPassword
+        });
+    }
+
+    const user = accounts.find(account =>
+        account.email &&
+        account.email.trim().toLowerCase() === email
+    );
+
+    if (!user) {
+        showLoginMessage("Account not found. Please create an account first.", "error");
+        return;
+    }
+
+    if (user.password !== password) {
+        showLoginMessage("Incorrect password.", "error");
+        return;
+    }
+
+    try {
+        localStorage.setItem("investmentAccounts", JSON.stringify(accounts));
+        localStorage.setItem("userName", user.name || email.split("@")[0]);
+        localStorage.setItem("userEmail", user.email);
+        localStorage.setItem("loggedInEmail", user.email);
+        localStorage.setItem("isLoggedIn", "true");
+
+        if (rememberMe) {
+            localStorage.setItem("rememberMe", "true");
+        } else {
+            localStorage.removeItem("rememberMe");
+        }
+
+        showLoginMessage("Login successful! Redirecting...", "success");
+
+        setTimeout(function () {
+            const returnPage = localStorage.getItem("returnPage");
+            localStorage.removeItem("returnPage");
+
+            // Only allow local page names, not external redirects.
+            const safeReturnPage =
+                returnPage &&
+                /^[a-zA-Z0-9_-]+\.html$/.test(returnPage)
+                    ? returnPage
+                    : "index.html";
+
+            window.location.href = safeReturnPage;
+        }, 700);
+
+    } catch (error) {
+        showLoginMessage("Unable to save login session. Check browser storage.", "error");
+    }
+});
 </script>
 
-
 </body>
-
 </html>

@@ -1,19 +1,68 @@
+```javascript
+// ========================================
+// INVEST INDIA - AUTHENTICATION
+// Frontend Only | localStorage
+// File: js/auth.js
+// ========================================
+
+
+// ========================================
+// GET REGISTERED USER
+// ========================================
+
+function getRegisteredUser() {
+
+    const email = localStorage.getItem("userEmail");
+    const password = localStorage.getItem("userPassword");
+    const name = localStorage.getItem("userName");
+
+    if (!email || !password) {
+        return null;
+    }
+
+    return {
+        name: name || "",
+        email: email.trim().toLowerCase(),
+        password: password
+    };
+}
+
+
+// ========================================
+// SAVE USER DETAILS
+// ========================================
+
+function saveUserDetails(name, email, password) {
+
+    const normalizedEmail = email.trim().toLowerCase();
+
+    // Save registration details
+    localStorage.setItem("userName", name.trim());
+    localStorage.setItem("userEmail", normalizedEmail);
+    localStorage.setItem("userPassword", password);
+
+    // Save details for profile page
+    const investmentUser = {
+        name: name.trim(),
+        email: normalizedEmail
+    };
+
+    localStorage.setItem(
+        "investmentUser",
+        JSON.stringify(investmentUser)
+    );
+}
+
+
 // ========================================
 // REGISTER
 // ========================================
 
-const registerForm =
-    document.getElementById(
-        "registerForm"
-    );
-
+const registerForm = document.getElementById("registerForm");
 
 if (registerForm) {
 
-    registerForm.addEventListener(
-        "submit",
-        registerUser
-    );
+    registerForm.addEventListener("submit", registerUser);
 
 }
 
@@ -22,153 +71,66 @@ function registerUser(event) {
 
     event.preventDefault();
 
+    // Get form values
+    const name = document.getElementById("registerName").value.trim();
 
-    const name =
-        document.getElementById(
-            "registerName"
-        )
-        .value
-        .trim();
+    const email = document.getElementById("registerEmail")
+        .value.trim().toLowerCase();
 
+    const password = document.getElementById("registerPassword").value;
 
-    const email =
-        document.getElementById(
-            "registerEmail"
-        )
-        .value
-        .trim()
-        .toLowerCase();
+    const confirmPasswordElement =
+        document.getElementById("confirmPassword");
 
+    const confirmPassword = confirmPasswordElement
+        ? confirmPasswordElement.value
+        : "";
 
-    const password =
-        document.getElementById(
-            "registerPassword"
-        )
-        .value;
+    // Validation
+    if (!name || !email || !password || !confirmPassword) {
 
-
-    const confirmPassword =
-        document.getElementById(
-            "confirmPassword"
-        )
-        .value;
-
-
-    // ========================================
-    // VALIDATION
-    // ========================================
-
-    if (name === "") {
-
-        alert(
-            "Please enter your name."
-        );
-
+        alert("Please fill in all fields.");
         return;
+
     }
-
-
-    if (email === "") {
-
-        alert(
-            "Please enter your email."
-        );
-
-        return;
-    }
-
 
     if (password.length < 6) {
 
-        alert(
-            "Password must be at least 6 characters."
-        );
-
+        alert("Password must be at least 6 characters.");
         return;
+
     }
 
+    if (password !== confirmPassword) {
 
-    if (
-        password !==
-        confirmPassword
-    ) {
-
-        alert(
-            "Passwords do not match."
-        );
-
+        alert("Passwords do not match.");
         return;
+
     }
 
+    // Check existing account
+    const existingUser = getRegisteredUser();
 
-    // ========================================
-    // CHECK EXISTING USER
-    // ========================================
+    if (existingUser && existingUser.email === email) {
 
-    const existingEmail =
-        localStorage.getItem(
-            "userEmail"
-        );
+        alert("An account with this email already exists. Please login.");
 
-
-    if (
-        existingEmail &&
-        existingEmail.toLowerCase() ===
-        email
-    ) {
-
-        alert(
-            "An account with this email already exists."
-        );
-
-        window.location.href =
-            "login.html";
-
+        window.location.href = "login.html";
         return;
+
     }
 
+    // Save new account
+    saveUserDetails(name, email, password);
 
-    // ========================================
-    // SAVE USER
-    // ========================================
+    // Do not automatically log in
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("loggedInEmail");
 
-    localStorage.setItem(
-        "userName",
-        name
-    );
+    alert("Registration successful! Please login.");
 
+    window.location.href = "login.html";
 
-    localStorage.setItem(
-        "userEmail",
-        email
-    );
-
-
-    localStorage.setItem(
-        "userPassword",
-        password
-    );
-
-
-    // User is not logged in after registration
-
-    localStorage.removeItem(
-        "isLoggedIn"
-    );
-
-
-    localStorage.removeItem(
-        "loggedInEmail"
-    );
-
-
-    alert(
-        "Registration successful!"
-    );
-
-
-    window.location.href =
-        "login.html";
 }
 
 
@@ -176,18 +138,11 @@ function registerUser(event) {
 // LOGIN
 // ========================================
 
-const loginForm =
-    document.getElementById(
-        "loginForm"
-    );
-
+const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
 
-    loginForm.addEventListener(
-        "submit",
-        loginUser
-    );
+    loginForm.addEventListener("submit", loginUser);
 
 }
 
@@ -196,133 +151,84 @@ function loginUser(event) {
 
     event.preventDefault();
 
+    // Get login values
+    const email = document.getElementById("loginEmail")
+        .value.trim().toLowerCase();
 
-    const email =
-        document.getElementById(
-            "loginEmail"
-        )
-        .value
-        .trim()
-        .toLowerCase();
+    const password = document.getElementById("loginPassword").value;
 
+    // Get saved account
+    const savedUser = getRegisteredUser();
 
-    const password =
-        document.getElementById(
-            "loginPassword"
-        )
-        .value;
+    if (!email || !password) {
 
-
-    // ========================================
-    // GET REGISTERED USER
-    // ========================================
-
-    const savedEmail =
-        localStorage.getItem(
-            "userEmail"
-        );
-
-
-    const savedPassword =
-        localStorage.getItem(
-            "userPassword"
-        );
-
-
-    const savedName =
-        localStorage.getItem(
-            "userName"
-        );
-
-
-    // ========================================
-    // CHECK USER
-    // ========================================
-
-    if (
-        !savedEmail ||
-        !savedPassword
-    ) {
-
-        alert(
-            "No registered account found. Please register first."
-        );
-
+        alert("Please enter your email and password.");
         return;
+
     }
 
+    // Account not found
+    if (!savedUser) {
 
-    if (
-        email !==
-        savedEmail.toLowerCase()
-    ) {
-
-        alert(
-            "Invalid email or password."
-        );
-
+        alert("Account not found. Please create an account first.");
         return;
+
     }
 
-
+    // Verify email and password
     if (
-        password !==
-        savedPassword
+        email !== savedUser.email ||
+        password !== savedUser.password
     ) {
 
-        alert(
-            "Invalid email or password."
-        );
-
+        alert("Invalid email or password.");
         return;
+
     }
 
+    // Login successful
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("loggedInEmail", savedUser.email);
 
-    // ========================================
-    // LOGIN SUCCESS
-    // ========================================
-
+    // Sync profile details
     localStorage.setItem(
-        "isLoggedIn",
-        "true"
+        "investmentUser",
+        JSON.stringify({
+            name: savedUser.name,
+            email: savedUser.email
+        })
     );
 
-
-    localStorage.setItem(
-        "loggedInEmail",
-        email
-    );
-
-
-    localStorage.setItem(
-        "userName",
-        savedName || ""
-    );
-
-
-    // ========================================
-    // REDIRECT
-    // ========================================
-
-    const returnPage =
-        localStorage.getItem(
-            "returnPage"
-        );
-
+    // Redirect to requested page if available
+    const returnPage = localStorage.getItem("returnPage");
 
     if (returnPage) {
 
-        localStorage.removeItem(
-            "returnPage"
-        );
-
-
-        window.location.href =
-            returnPage;
+        localStorage.removeItem("returnPage");
+        window.location.href = returnPage;
 
     } else {
 
-        window.location.href =
-            "index.html";
+        window.location.href = "index.html";
+
     }
+
 }
+
+
+// ========================================
+// LOGOUT
+// ========================================
+
+function logoutUser() {
+
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("loggedInEmail");
+
+    // Keep registered account details.
+    // The user can log in again later.
+
+    window.location.href = "login.html";
+
+}
+```

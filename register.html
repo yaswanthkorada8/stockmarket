@@ -1,664 +1,281 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | Invest India</title>
-
-    <link rel="stylesheet"
-          href="css/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 
 <body class="auth-page">
 
-
-<!-- ==================================================
-     REGISTER PAGE
-================================================== -->
-
 <div class="auth-container">
 
-
-    <!-- ==================================================
-         LEFT SIDE
-    ================================================== -->
-
     <div class="auth-info">
-
-
-        <a href="index.html"
-           class="auth-logo">
-
+        <a href="index.html" class="auth-logo">
             Invest<span>India</span>
-
         </a>
 
-
         <div class="auth-info-content">
-
-
-            <span class="auth-label">
-                INVEST INDIA
-            </span>
-
+            <span class="auth-label">INVEST INDIA</span>
 
             <h1>
-
                 Start Your
                 <span>Market Journey.</span>
-
             </h1>
 
-
             <p>
-
                 Create your Invest India account and explore
                 stocks, IPOs, mutual funds and ETFs from
                 one simple platform.
-
             </p>
 
-
             <div class="auth-features">
-
-
                 <div>
-
-                    <span>
-                        📈
-                    </span>
-
-                    <p>
-                        Analyse Stocks
-                    </p>
-
+                    <span>📈</span>
+                    <p>Analyse Stocks</p>
                 </div>
 
-
                 <div>
-
-                    <span>
-                        💼
-                    </span>
-
-                    <p>
-                        Track Portfolio
-                    </p>
-
+                    <span>💼</span>
+                    <p>Track Portfolio</p>
                 </div>
 
-
                 <div>
-
-                    <span>
-                        🎓
-                    </span>
-
-                    <p>
-                        Learn Markets
-                    </p>
-
+                    <span>🎓</span>
+                    <p>Learn Markets</p>
                 </div>
-
-
             </div>
-
         </div>
-
 
         <div class="auth-footer-text">
-
             © 2026 Invest India
-
         </div>
-
     </div>
 
-
-
-    <!-- ==================================================
-         RIGHT SIDE
-    ================================================== -->
-
     <div class="auth-form-section">
-
-
         <div class="auth-form-card">
 
-
-            <!-- ==================================================
-                 HEADER
-            ================================================== -->
-
             <div class="auth-form-header">
-
-
                 <span class="auth-mobile-logo">
-
                     Invest<span>India</span>
-
                 </span>
 
-
-                <h2>
-
-                    Create Account
-
-                </h2>
-
+                <h2>Create Account</h2>
 
                 <p>
-
                     Join Invest India and start exploring
                     financial markets.
-
                 </p>
-
             </div>
-
-
-
-            <!-- ==================================================
-                 REGISTER FORM
-            ================================================== -->
 
             <form id="registerForm">
 
-
-                <!-- ==================================================
-                     FULL NAME
-                ================================================== -->
-
                 <div class="form-group">
-
-                    <label for="registerName">
-
-                        Full Name
-
-                    </label>
-
-
+                    <label for="registerName">Full Name</label>
                     <input
                         type="text"
                         id="registerName"
                         placeholder="Enter your full name"
                         required
+                        minlength="2"
+                        autocomplete="name"
                     >
-
                 </div>
 
-
-
-                <!-- ==================================================
-                     EMAIL
-                ================================================== -->
-
                 <div class="form-group">
-
-                    <label for="registerEmail">
-
-                        Email Address
-
-                    </label>
-
-
+                    <label for="registerEmail">Email Address</label>
                     <input
                         type="email"
                         id="registerEmail"
                         placeholder="Enter your email"
                         required
+                        autocomplete="email"
                     >
-
                 </div>
 
-
-
-                <!-- ==================================================
-                     PASSWORD
-                ================================================== -->
-
                 <div class="form-group">
-
-                    <label for="registerPassword">
-
-                        Password
-
-                    </label>
-
-
+                    <label for="registerPassword">Password</label>
                     <input
                         type="password"
                         id="registerPassword"
                         placeholder="Create a password"
                         required
                         minlength="6"
+                        autocomplete="new-password"
                     >
-
                 </div>
 
-
-
-                <!-- ==================================================
-                     CONFIRM PASSWORD
-                ================================================== -->
-
                 <div class="form-group">
-
-                    <label for="confirmPassword">
-
-                        Confirm Password
-
-                    </label>
-
-
+                    <label for="confirmPassword">Confirm Password</label>
                     <input
                         type="password"
                         id="confirmPassword"
                         placeholder="Confirm your password"
                         required
                         minlength="6"
+                        autocomplete="new-password"
                     >
-
                 </div>
-
-
-
-                <!-- ==================================================
-                     TERMS
-                ================================================== -->
 
                 <div class="register-terms">
-
                     <label>
-
-                        <input
-                            type="checkbox"
-                            id="terms"
-                            required
-                        >
-
+                        <input type="checkbox" id="terms" required>
                         <span>
-
                             I agree to the
-
-                            <a href="#">
-                                Terms & Conditions
-                            </a>
-
+                            <a href="#">Terms &amp; Conditions</a>
                         </span>
-
                     </label>
-
                 </div>
 
-
-
-                <!-- ==================================================
-                     REGISTER BUTTON
-                ================================================== -->
-
-                <button
-                    type="submit"
-                    class="auth-submit-btn">
-
+                <button type="submit" class="auth-submit-btn">
                     Create Account
-
-                    <span>
-                        →
-                    </span>
-
+                    <span>→</span>
                 </button>
 
-
-
-                <!-- ==================================================
-                     MESSAGE
-                ================================================== -->
-
-                <p
-                    id="registerMessage"
-                    class="auth-message">
-
-                </p>
-
+                <p id="registerMessage" class="auth-message" role="status"></p>
 
             </form>
 
-
-
-            <!-- ==================================================
-                 LOGIN LINK
-            ================================================== -->
-
             <div class="auth-switch">
-
-                <span>
-                    Already have an account?
-                </span>
-
-
-                <a href="login.html">
-
-                    Login
-
-                </a>
-
+                <span>Already have an account?</span>
+                <a href="login.html">Login</a>
             </div>
 
-
-
-            <!-- ==================================================
-                 HOME
-            ================================================== -->
-
-            <a href="index.html"
-               class="back-home">
-
+            <a href="index.html" class="back-home">
                 ← Back to Home
-
             </a>
 
-
         </div>
-
     </div>
 
 </div>
 
-
-
-<!-- ==================================================
-     REGISTER JAVASCRIPT
-     FRONTEND ONLY
-     LOCAL STORAGE
-================================================== -->
-
 <script>
+"use strict";
 
+const registerForm = document.getElementById("registerForm");
+const registerMessage = document.getElementById("registerMessage");
 
-// ========================================
-// GET ELEMENTS
-// ========================================
+function showRegisterMessage(message, type) {
+    registerMessage.textContent = message;
+    registerMessage.className = "auth-message " + type;
+}
 
-const registerForm =
-    document.getElementById(
-        "registerForm"
-    );
+function getRegisteredAccounts() {
+    try {
+        const storedAccounts = localStorage.getItem("investmentAccounts");
 
+        if (storedAccounts) {
+            const accounts = JSON.parse(storedAccounts);
 
-const registerMessage =
-    document.getElementById(
-        "registerMessage"
-    );
-
-
-// ========================================
-// REGISTER FORM SUBMIT
-// ========================================
-
-registerForm.addEventListener(
-    "submit",
-    function(event) {
-
-        event.preventDefault();
-
-
-        // ========================================
-        // GET NAME
-        // ========================================
-
-        const name =
-            document.getElementById(
-                "registerName"
-            )
-            .value
-            .trim();
-
-
-        // ========================================
-        // GET EMAIL
-        // ========================================
-
-        const email =
-            document.getElementById(
-                "registerEmail"
-            )
-            .value
-            .trim()
-            .toLowerCase();
-
-
-        // ========================================
-        // GET PASSWORD
-        // ========================================
-
-        const password =
-            document.getElementById(
-                "registerPassword"
-            )
-            .value;
-
-
-        // ========================================
-        // GET CONFIRM PASSWORD
-        // ========================================
-
-        const confirmPassword =
-            document.getElementById(
-                "confirmPassword"
-            )
-            .value;
-
-
-        // ========================================
-        // GET TERMS
-        // ========================================
-
-        const terms =
-            document.getElementById(
-                "terms"
-            )
-            .checked;
-
-
-        // ========================================
-        // EMPTY CHECK
-        // ========================================
-
-        if (
-            !name ||
-            !email ||
-            !password ||
-            !confirmPassword
-        ) {
-
-            registerMessage.textContent =
-                "Please fill all fields.";
-
-            registerMessage.className =
-                "auth-message error";
-
-            return;
-
+            if (Array.isArray(accounts)) {
+                return accounts;
+            }
         }
 
-
-        // ========================================
-        // NAME VALIDATION
-        // ========================================
-
-        if (
-            name.length < 2
-        ) {
-
-            registerMessage.textContent =
-                "Please enter a valid name.";
-
-            registerMessage.className =
-                "auth-message error";
-
-            return;
-
-        }
-
-
-        // ========================================
-        // PASSWORD LENGTH
-        // ========================================
-
-        if (
-            password.length < 6
-        ) {
-
-            registerMessage.textContent =
-                "Password must contain at least 6 characters.";
-
-            registerMessage.className =
-                "auth-message error";
-
-            return;
-
-        }
-
-
-        // ========================================
-        // PASSWORD MATCH
-        // ========================================
-
-        if (
-            password !==
-            confirmPassword
-        ) {
-
-            registerMessage.textContent =
-                "Passwords do not match.";
-
-            registerMessage.className =
-                "auth-message error";
-
-            return;
-
-        }
-
-
-        // ========================================
-        // TERMS CHECK
-        // ========================================
-
-        if (!terms) {
-
-            registerMessage.textContent =
-                "Please accept the Terms & Conditions.";
-
-            registerMessage.className =
-                "auth-message error";
-
-            return;
-
-        }
-
-
-        // ========================================
-        // CHECK EXISTING ACCOUNT
-        // ========================================
-
-        const existingEmail =
-            localStorage.getItem(
-                "userEmail"
-            );
-
-
-        if (
-            existingEmail &&
-            existingEmail.toLowerCase() ===
-            email
-        ) {
-
-            registerMessage.textContent =
-                "An account with this email already exists. Please login.";
-
-            registerMessage.className =
-                "auth-message error";
-
-            return;
-
-        }
-
-
-        // ========================================
-        // SAVE USER DATA
-        // ========================================
-
-        localStorage.setItem(
-            "userName",
-            name
-        );
-
-
-        localStorage.setItem(
-            "userEmail",
-            email
-        );
-
-
-        localStorage.setItem(
-            "userPassword",
-            password
-        );
-
-
-        // ========================================
-        // CLEAR LOGIN STATUS
-        // ========================================
-
-        localStorage.removeItem(
-            "isLoggedIn"
-        );
-
-
-        localStorage.removeItem(
-            "loggedInEmail"
-        );
-
-
-        // ========================================
-        // SUCCESS MESSAGE
-        // ========================================
-
-        registerMessage.textContent =
-            "Account created successfully!";
-
-        registerMessage.className =
-            "auth-message success";
-
-
-        // ========================================
-        // REDIRECT TO LOGIN
-        // ========================================
-
-        setTimeout(
-            function() {
-
-                window.location.href =
-                    "login.html";
-
-            },
-            1000
-        );
-
+        return [];
+    } catch (error) {
+        return null;
     }
-);
+}
 
+registerForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("registerName").value.trim();
+    const email = document.getElementById("registerEmail").value.trim().toLowerCase();
+    const password = document.getElementById("registerPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    const termsAccepted = document.getElementById("terms").checked;
+
+    if (!name || !email || !password || !confirmPassword) {
+        showRegisterMessage("Please fill all fields.", "error");
+        return;
+    }
+
+    if (name.length < 2) {
+        showRegisterMessage("Please enter a valid name.", "error");
+        return;
+    }
+
+    if (password.length < 6) {
+        showRegisterMessage("Password must contain at least 6 characters.", "error");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        showRegisterMessage("Passwords do not match.", "error");
+        return;
+    }
+
+    if (!termsAccepted) {
+        showRegisterMessage("Please accept the Terms & Conditions.", "error");
+        return;
+    }
+
+    const accounts = getRegisteredAccounts();
+
+    if (accounts === null) {
+        showRegisterMessage("Unable to read saved accounts. Check browser storage.", "error");
+        return;
+    }
+
+    // Migrate an existing account from the old storage format.
+    const oldEmail = localStorage.getItem("userEmail");
+    const oldPassword = localStorage.getItem("userPassword");
+    const oldName = localStorage.getItem("userName");
+
+    if (oldEmail && oldPassword &&
+        !accounts.some(account => account.email === oldEmail.trim().toLowerCase())) {
+        accounts.push({
+            name: oldName || oldEmail.split("@")[0],
+            email: oldEmail.trim().toLowerCase(),
+            password: oldPassword
+        });
+    }
+
+    const accountExists = accounts.some(account =>
+        account.email &&
+        account.email.trim().toLowerCase() === email
+    );
+
+    if (accountExists) {
+        showRegisterMessage("This email is already registered. Please login.", "error");
+        return;
+    }
+
+    accounts.push({
+        name: name,
+        email: email,
+        password: password
+    });
+
+    try {
+        localStorage.setItem("investmentAccounts", JSON.stringify(accounts));
+
+        // Keep existing profile-page compatibility.
+        localStorage.setItem("userName", name);
+        localStorage.setItem("userEmail", email);
+
+        // Do not treat registration as a logged-in session.
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("loggedInEmail");
+
+        showRegisterMessage("Account created successfully! Redirecting to login...", "success");
+
+        registerForm.reset();
+
+        setTimeout(function () {
+            window.location.href = "login.html";
+        }, 1000);
+
+    } catch (error) {
+        showRegisterMessage("Unable to save account. Check browser storage settings.", "error");
+    }
+});
 </script>
 
-
 </body>
-
 </html>
